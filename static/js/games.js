@@ -236,7 +236,7 @@ const Games = (() => {
   // TETRIS
   // ──────────────────────────────────────────────────────────
   const tetris = (() => {
-    const COLS = 10, ROWS = 20, SIZE = 24;
+    const COLS = 10, ROWS = 20, SIZE = 16;
     const COLORS = ["#3d78e8","#f59e0b","#22c55e","#ef4444","#a855f7","#06b6d4","#f43f5e"];
     const PIECES = [
       [[1,1,1,1]],
@@ -367,9 +367,7 @@ const Games = (() => {
           <div style="margin-top:10px;display:flex;gap:8px;justify-content:center;">
             <button class="btn btn-primary btn-sm" id="tetris-start-btn">▶ Iniciar</button>
           </div>
-          <div style="margin-top:8px;font-size:0.72rem;color:var(--text-muted);">
-            ← → Mover · ↑ Girar · ↓ Acelerar · Espaço Cair
-          </div>
+
         </div>
       `;
       canvas = document.getElementById("tetris-canvas");
@@ -434,7 +432,7 @@ const Games = (() => {
       const el = document.getElementById("mine-board");
       if (!el) return;
       el.innerHTML = "";
-      el.style.gridTemplateColumns = `repeat(${COLS},28px)`;
+      el.style.gridTemplateColumns = `repeat(${COLS},22px)`;
       for (let r=0;r<ROWS;r++) for (let c=0;c<COLS;c++) {
         const cell = document.createElement("div");
         cell.className = "mine-cell";
@@ -490,9 +488,7 @@ const Games = (() => {
           </div>
         </div>
         <div id="mine-board"></div>
-        <div style="margin-top:8px;font-size:0.72rem;color:var(--text-muted);text-align:center;">
-          Clique esquerdo: revelar · Botão Bandeira: marcar minas
-        </div>
+
       `;
       renderBoard();
 
